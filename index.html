@@ -97,20 +97,20 @@
     <script>
       var images = document.querySelectorAll("#headerpic img");
       var index = 0;
-      images[index].style.display = "block";
-      function switchImage() {
+        images[index].style.display = "block";
+        function switchImage() {
         images[index].style.display = "none";
         index = (index + 1) % images.length;
         images[index].style.display = "block";
-      }
+        }
       setInterval(switchImage, 3000);
     </script>
     <br><br><br>
     <div  data-aos="fade-down" data-aos-offset="300">
-      <div id="center">
-        <img src="4.png" width="90%" alt="" class="center-image"/>
-      </div>
-     <div id="headercnt"><br></div>
+        <div id="center">
+          <img src="4.png" width="90%" alt="" class="center-image"/>
+        </div>
+      <div id="headercnt"><br></div>
     <div id="about-me" data-aos="fade-down" data-aos-offset="300">
         <br><span style="font-size: larger; font-weight: bold;">關於我</span><br><br>
         <p>*我是一隻可愛的小羊咩咩咩*</p>
@@ -127,21 +127,23 @@
     <div id="work-classification" data-aos="fade-down" data-aos-offset="300" style="text-align: center;">
       <div style="display: inline-block; margin-right: 10px;"
         onmouseover="changeImage(this, '7.jpg', '水彩')"
-        onmouseout="restoreImage(this, '3.jpg', '水彩')">
-        <img src="3.jpg" width="60%" alt="">		  
-       <p style="font-size: 24px;"><strong>水彩</strong></p>
-     </div>
-   <div style="display: inline-block; margin-right: 10px;"
+        onmouseout="restoreImage(this, '3.jpg', '水彩')"
+        onclick="openNewTab('2.html')">
+        <img src="3.jpg" width="60%" alt="">
+        <p style="font-size: 24px;"><strong>水彩</strong></p>
+      </div>
+      <div style="display: inline-block; margin-right: 10px;"
         onmouseover="changeImage(this, '5.jpg', '素描')"
-        onmouseout="restoreImage(this, '4.jpg', '素描')">
+        onmouseout="restoreImage(this, '4.jpg', '素描')"
+        onclick="openNewTab('3.html')">
         <img src="4.jpg" width="60%" alt="">
         <p style="font-size: 24px;"><strong>素描</strong></p>
       </div>
       <div style="display: inline-block; margin-right: 10px;"
         onmouseover="changeImage(this, '6.jpg', '人像')"
-        onmouseout="restoreImage(this, '2.jpg', '人像')">
+        onmouseout="restoreImage(this, '2.jpg', '人像')"
+        onclick="openNewTab('4.html')">
         <img src="2.jpg" width="60%" alt="">
-		  
         <p style="font-size: 24px;"><strong>3D</strong></p>
       </div>
     </div>
@@ -167,6 +169,10 @@
       </div>
     </div>
     <script>
+      function openNewTab(url) {
+        window.open(url, '_blank');
+      }
+
       function changeImage(element, newSrc, newAlt) {
         const img = element.querySelector('img');
         img.src = newSrc;
